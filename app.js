@@ -12,9 +12,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname + "/public"));
 app.use(methodOverride('_method'));
 
-app.listen(port, function () {
-  console.log("Active on port " + port)
-});
+
 
 // ======== Models Import ========
 const Todo = require('./models/todo');
@@ -90,3 +88,6 @@ app.delete("/todo/delete/:id", function (req, res) {
   })
 });
 
+app.listen(port, function () {
+  console.log("Active on port " + port)
+});
