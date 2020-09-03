@@ -36,7 +36,7 @@ app.get("/todo", function (req, res) {
     if (err) {
       console.log(err);
     } else {
-      console.log("Yeet")
+      // console.log("Yeet")
       res.render('todos', { todos: todos })
     }
   })
