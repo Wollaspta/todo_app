@@ -14,7 +14,7 @@ button {
   background-color: transparent;
   border-radius: 3px;
   text-align: left;
-  font-size: 1.8em;
+  font-size: 1em;
   height: auto;
   width: auto;
   border-color: transparent;
@@ -37,7 +37,7 @@ input {
   border-radius: 10px;
   margin: 20px;
   padding:10px;
-  font-size: 1.5em;
+  font-size: 1.2em;
 }
 
 input:focus {
@@ -99,7 +99,7 @@ text-align: center;
   flex-direction: row;
   justify-content: left;
   width: 80%;
-  font-size: 1.8em;
+  font-size: 1em;
   align-items: center;
   height: auto;
   
