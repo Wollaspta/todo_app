@@ -3,11 +3,122 @@
   padding: 0;
 }
 
-.true {
+
+
+body {
+  height: 100vh;
+  font-family: 'Rubik', sans-serif;
+}
+
+button {
+  background-color: transparent;
+  border-radius: 3px;
+  text-align: left;
+  font-size: 1.8em;
+  height: auto;
+  width: auto;
+  border-color: transparent;
+}
+button:hover{
+  cursor: pointer;
+}
+
+button:active{
+  outline: none;
+}
+
+button:focus{
+  outline: none;
+}
+
+input {
+  background-color: transparent;
+  border: solid 2px rgba(10, 10, 10, 0.1);
+  border-radius: 10px;
+  margin: 20px;
+  padding:10px;
+  font-size: 1.5em;
+}
+
+input:focus {
+  outline: none;
+  color: #111;
+}
+
+
+.clear-todo {
+  padding: 20px;
+  width: auto;
+}
+.new-todo {
+  width: auto;
+  padding: 5px;
+  height: auto;
+}
+
+.done-todo {
+  
+  padding: 5px;
+  background-color: transparent;
+  width: auto;
+  height: auto;
+}
+
+.delete-todo {
+  width: auto;
+  padding: 5px;
+  background-color: transparent;
+  height: auto;
+}
+
+.flex-container {
+  background: #00F260;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #0575E6, #00F260);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #0575E6, #00F260); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  height: 100%;
+  display: flex;
+  padding: 0;
+  margin: 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: auto;
+}
+
+.flex-item {
+
+padding: 5px;
+/* width: auto; */
+text-align: center;
+}
+
+.flex-item-todos {
+  
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  width: 40%;
+  font-size: 2em;
+  align-items: center;
+  height: auto;
+  
+}
+
+.true{
   text-decoration: line-through;
+  opacity: .5;
 }
 
-.false {
-  font-size: large;
+.flex-item-todos form {
+margin: 2px;
+padding:2px;
+background-color: transparent;
 }
 
+.todo {
+  border: 2px solid rgba(10, 10, 10, .3);
+  border-radius: 10px;
+  margin-bottom: 10px;
+  
+}

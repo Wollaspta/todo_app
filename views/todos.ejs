@@ -2,44 +2,58 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TODO List</title>
-  <link rel="stylesheet" href="../stylesheets/app.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO List</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../stylesheets/app.css">
 
 </head>
 
 <body>
 
-  <!-- add new todo -->
-  <form action="/todo" method="POST">
-    <input type="text" name="todo[text]" id="" placeholder="Todo" required>
-    <input type="submit" value="submit">
-  </form>
+    <div class="flex-container">
+        <h1>What do you want to do today?</h1>
 
-  <h1>Todos for today</h1>
-
-  <% todos.forEach(function(todo){%>
-  <ul>
+        <!-- add new todo -->
+        <div class="flex-item">
+            <form action="/todo" method="POST">
+                <input type="text" name="todo[text]" id="" placeholder="Todo" required>
+                <button type="submit" class="new-todo">submit</button>
 
 
-    <form action=" /todo/delete/<%=todo.id%>?_method=DELETE" method="POST">
-      <li class="<%= todo.done %>"><%= todo.text %></li>
-      <button type="submit">Delete</button>
-    </form>
-    <!-- Toggle done -->
-    <form action="/todo/update/<%= todo._id %>?_method=PUT" method="POST">
-      <button type="submit" name="todo[done]">Done</button>
-    </form>
+            </form>
+            <form action="/todo/delete/all?_method=DELETE" method="POST">
+                <button type="submit"><i class="far fa-trash-alt clear-todo"></i></button>
+            </form>
 
-  </ul>
-  <%}) %>
-  <!-- Delete all todos from list -->
-  <form action="/todo/delete/all?_method=DELETE" method="POST">
-    <button type="submit">DELETE ALL!!!!</button>
-  </form>
 
-  <script type="text/javascript" src="../main.js"></script>
+        </div>
+
+        <% todos.forEach(function(todo){%>
+        <div class="flex-item-todos todo">
+            <!-- Update done -->
+            <form action="/todo/update/<%= todo._id %>?_method=PUT" method="POST">
+                <button type="submit" name="todo[done]"><i class="fas fa-check done-todo"></i></button>
+            </form>
+            <!-- Delete done -->
+
+            <form action="/todo/delete/<%=todo.id%>?_method=DELETE" method="POST">
+                <button type="submit"><i class="fas fa-eraser delete-todo"></i></button>
+                <span class="<%= todo.done %>"><%= todo.text %></span>
+            </form>
+        </div>
+        <!-- Toggle done -->
+        <%}) %>
+
+
+
+
+
+        <script type="text/javascript" src="../main.js"></script>
+
+    </div>
 </body>
 
 </html>

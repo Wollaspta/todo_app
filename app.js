@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 const app = express();
 
+
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname + "/public"));
@@ -19,8 +20,8 @@ app.listen(port, function () {
 const Todo = require('./models/todo');
 
 // ======== Mongoose Connect ========
-
-mongoose.connect("mongodb://localhost/todo_app", {
+const mongodb = "mongodb+srv://Admin_User:tMgywjHwl88YSRiT@cluster0.3eyge.gcp.mongodb.net/todo_app?retryWrites=true&w=majority"
+mongoose.connect(mongodb, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })

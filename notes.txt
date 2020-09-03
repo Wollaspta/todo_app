@@ -1,0 +1,4 @@
+  <!-- Toggle done -->
+        <!-- <form action="/todo/update/<%= todo._id %>?_method=PUT" method="POST">
+        <button type="submit" name="todo[done]">Done</button>
+        </form> -->
