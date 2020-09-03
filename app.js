@@ -20,8 +20,8 @@ app.listen(port, function () {
 const Todo = require('./models/todo');
 
 // ======== Mongoose Connect ========
-const mongodb = "mongodb+srv://Admin_User:tMgywjHwl88YSRiT@cluster0.3eyge.gcp.mongodb.net/todo_app?retryWrites=true&w=majority"
-mongoose.connect(mongodb, {
+const dbRoute = process.env.dbRoute;
+mongoose.connect(dbRoute, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
