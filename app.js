@@ -18,7 +18,8 @@ app.use(methodOverride('_method'));
 const Todo = require('./models/todo');
 
 // ======== Mongoose Connect ========
-const dbRoute = process.env.dbRoute;
+
+const dbRoute = "mongodb+srv://Admin_User:998cars998@cluster0.3eyge.gcp.mongodb.net/todo_app?retryWrites=true&w=majority";
 mongoose.connect(dbRoute, {
   useNewUrlParser: true,
   useUnifiedTopology: true
@@ -48,7 +49,7 @@ app.post("/todo", function (req, res) {
       console.log(err)
     } else {
       res.redirect('/todo')
-      console.log(req.body.todo)
+      // console.log(req.body.todo)
     }
   });
 });
