@@ -1,0 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+
+.true {
+  text-decoration: line-through;
+}
+
+.false {
+  font-size: large;
+}
+
