@@ -91,6 +91,7 @@ background: linear-gradient(to right, #0575E6, #00F260); /* W3C, IE 10+/ Edge, F
 padding: 5px;
 /* width: auto; */
 text-align: center;
+border: 2px solid black;
 }
 
 .flex-item-todos {
@@ -102,6 +103,7 @@ text-align: center;
   font-size: 1em;
   align-items: center;
   height: auto;
+  
   
 }
 

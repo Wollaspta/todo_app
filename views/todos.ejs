@@ -23,14 +23,10 @@
             <form action="/todo" method="POST">
                 <input type="text" name="todo[text]" id="" placeholder="Todo" required>
                 <button type="submit" class="new-todo">submit</button>
-
-
             </form>
             <form action="/todo/delete/all?_method=DELETE" method="POST">
                 <button type="submit"><i class="far fa-trash-alt clear-todo"></i></button>
             </form>
-
-
         </div>
 
         <% todos.forEach(function(todo){%>
