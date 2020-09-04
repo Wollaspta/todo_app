@@ -36,9 +36,9 @@
         <% todos.forEach(function(todo){%>
         <div class="flex-item-todos todo">
             <!-- Update done -->
-            <form action="/todo/update/<%= todo._id %>?_method=PUT" method="POST">
+            <!-- <form action="/todo/update/<%= todo._id %>?_method=PUT" method="POST">
                 <button type="submit" name="todo[done]"><i class="fas fa-check done-todo"></i></button>
-            </form>
+            </form> -->
             <!-- Delete done -->
 
             <form action="/todo/delete/<%=todo.id%>?_method=DELETE" method="POST">
