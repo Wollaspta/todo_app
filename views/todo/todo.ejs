@@ -1,0 +1,26 @@
+<%- include('../partials/header') %>
+
+
+<h1><%= user.username.toUpperCase() %> What do you want to do today?</h1>
+<div class="flex-item">
+
+  <!-- add new todo -->
+  <form action="/todo/new" method="POST">
+    <input type="text" name="todo[text]" id="" placeholder="Todo" required spellcheck="false">
+    <button type="submit"><i class="fas fa-plus"></i></button>
+  </form>
+</div>
+<div class="flex-item flex-list">
+  <% user.todos.forEach(function(todo){%>
+  <!-- delete and show each todo -->
+  <form action="/todo/delete/<%=todo.id%>?_method=DELETE" method="post"><button type="submit"><i class="far fa-trash-alt"></i></button><%= todo.text %></form>
+  <%}) %>
+</div>
+<div class="flex-item">
+  <!-- Delete all todos from list -->
+  <form action="/todo/delete/all?_method=DELETE" method="POST">
+    <button type="submit">DELETE ALL!!!!</button>
+  </form>
+</div>
+
+<%- include('../partials/footer') %>
