@@ -3,11 +3,11 @@ const router = express.Router();
 const passport = require('passport');
 const User = require('../models/user');
 const Todo = require('../models/todo');
-
+// ======== SHow login Form ========
 router.get('/login', function (req, res) {
   res.render('user/login');
 });
-
+// ======== Login useer ========
 router.post('/login', passport.authenticate('local',
   {
     successRedirect: '/todo',
@@ -15,7 +15,7 @@ router.post('/login', passport.authenticate('local',
   }), function (req, res) {
   });
 
-// Create new user
+// ======== Create a new user ========
 router.post("/register", function (req, res) {
   var newUser = new User({ username: req.body.username });
   User.register(newUser, req.body.password, function (err, user) {
@@ -28,7 +28,7 @@ router.post("/register", function (req, res) {
     });
   });
 });
-
+// ======== Show register form ========
 router.get('/register', function (req, res) {
   res.render('user/register')
 });
