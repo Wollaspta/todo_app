@@ -8,7 +8,7 @@ const app = express();
 const passport = require('passport');
 const LocalStrategy = require('passport-local');
 
-// ======== Uses the user info on every route ========
+// ======== Uses the user info on every route =========
 app.use(function (req, res, next) {
   res.locals.currentUser = req.user;
   next();
