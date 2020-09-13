@@ -1,9 +1,14 @@
 body {
   margin: 0;
-  width: 90vw;
+  width: 100vw;
   height: 100vh;
   color:#7894AB;
-  background-color: #222B3A;
+  /* background-color: #222B3A; */
+background-image: url(https://images.unsplash.com/photo-1505761671935-60b3a7427bad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80);
+background-repeat: no-repeat;
+background-position: center;
+background-size: cover;
+
   padding:0;
 }
 
@@ -108,6 +113,7 @@ h2 span {
   width:60%;
   margin: 0 20%;
  box-shadow:1px 1px 1px 5px rgba(84, 192, 172, .2) ; 
+ background-color: rgba(56, 109, 99,.8);
 }
 
 .container-user-list {
