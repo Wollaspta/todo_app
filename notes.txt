@@ -83,3 +83,10 @@ router.delete("/todo/delete/all", isLoggedIn, function (req, res) {
     }
   })
 })
+
+
+#F8FAF9
+#87B0B0
+#DE3D4F
+#7894AB
+#222B3A

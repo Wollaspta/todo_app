@@ -1,36 +1,41 @@
 <%- include('../partials/header') %>
 
-<section class="user-form">
-  <h1><%= user.username %> What do you want to do today?</h1>
-  <!-- add new todo -->
-  <form action="/todo/new" method="POST">
-    <input type="text" name="todo[text]" id="" placeholder="Todo" required spellcheck="false" class="new-todo" autofocus>
-    <button type="submit" class="plus-button"><i class="fas fa-plus"></i></button>
-  </form>
-</section>
+<div class="container-new-todo">
+  <h1 class="todo-welcome"><span><%= user.username %></span> What do you want to do today?</h1>
+  <div class="new-todo">
+    <section>
+
+      <!-- add new todo -->
+      <form action="/todo/new" method="POST">
+        <input type="text" name="todo[text]" id="form-new-todo" placeholder="Todo" required spellcheck="false" class="new-todo" autofocus>
+        <!-- <button type="submit" class="plus-button"><i class="fas fa-plus"></i></button> -->
+      </form>
+    </section>
+  </div>
 
 
 
 
-<div class="todo-list">
-  <% user.todos.forEach(function(todo){%>
-  <!-- delete and show each todo -->
-  <form action="/todo/delete/<%=todo.id%>?_method=DELETE" method="post">
-    <ul>
-      <li><span><button type="submit"><i class="far fa-trash-alt"></i></button></span><%= todo.text %></li>
+  <div class="container-user-list">
+    <% user.todos.forEach(function(todo){%>
+    <!-- delete and show each todo -->
 
-    </ul>
+    <form action="/todo/delete/<%=todo.id%>?_method=DELETE" method="post">
+      <ul>
+        <li><button type="submit"><i class="far fa-trash-alt"></i></button>
+          <p><%= todo.text %></p>
+        </li>
+      </ul>
+    </form>
 
+    <%}) %>
+  </div>
 
-  </form>
-  <%}) %>
-</div>
-
-<!-- <div class="flex-item"> -->
-<!-- Delete all todos from list -->
-<!-- <form action="/todo/delete/all?_method=DELETE" method="POST">
+  <!-- <div class="flex-item"> -->
+  <!-- Delete all todos from list -->
+  <!-- <form action="/todo/delete/all?_method=DELETE" method="POST">
     <button type="submit">DELETE ALL!!!!</button>
   </form>
 </div> -->
-
+</div>
 <%- include('../partials/footer') %>

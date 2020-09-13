@@ -1,12 +1,14 @@
 <%- include('../partials/header') %>
-<section class="user-form">
-  <h1>Register</h1>
-  <form action="/register" method="POST">
-    <input type="text" name="username" id="" placeholder="Username" autofocus required>
-    <input type="password" name="password" id="" placeholder="Password" required minlength="8">
-    <input type="submit" value="Register">
-  </form>
-</section>
-
-
+<div class="container-user-form">
+  <div class="user-form">
+    <section>
+      <h1>Register</h1>
+      <form action="/register" method="POST">
+        <input type="text" name="username" id="" placeholder="Username" autofocus required>
+        <input type="password" name="password" id="" placeholder="Password" required minlength="8">
+        <input type="submit" value="Register">
+      </form>
+    </section>
+  </div>
+</div>
 <%- include('../partials/footer') %>
