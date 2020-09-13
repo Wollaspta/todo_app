@@ -50,3 +50,36 @@ todo.save();
   <!-- <form action="/todo/update/<%= todo._id %>?_method=PUT" method="POST">
     <button type="submit" name="todo[done]">Done</button>
   </form> -->
+
+
+
+
+    (req.user.id, { $pull: { $or: dAllTodo.id } }{
+    if(err) {
+      console.log(err)
+    } else {
+      Todo.deleteMany({}, function (err, dAllTodo)
+    }
+    res.redirect('/todo')
+    console.log(req.user.todos)
+  })
+
+
+
+router.delete("/todo/delete/all", isLoggedIn, function (req, res) {
+  // console.log(req.user)
+  User.findByIdAndUpdate(req.user.id, { $pull: { todos: req.user.todos } }, function (err) {
+    if (err) {
+      console.log(err)
+    } else {
+      Todo.deleteMany({}, function (err, dAllTodo) {
+        if (err) {
+          console.log(err)
+        } else {
+          res.redirect('/todo')
+          console.log(req.user.todos)
+        }
+      })
+    }
+  })
+})
