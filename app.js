@@ -34,7 +34,7 @@ const User = require('./models/user');
 // ======== Mongoose Connect ========
 const localDB = 'mongodb://localhost/todo_app'
 const dbRoute = "mongodb+srv://Admin_User:998cars998@cluster0.3eyge.gcp.mongodb.net/todo_app?retryWrites=true&w=majority";
-mongoose.connect(localDB, {
+mongoose.connect(dbRoute, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
