@@ -14,12 +14,18 @@ app.use(function (req, res, next) {
   next();
 });
 
+
+
 // ======== App settings =======
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname + "/public"));
 app.use(methodOverride('_method'));
 
+app.use(function (req, res, next) {
+  res.locals.currentUser = req.user;
+  next();
+});
 
 // ======== Models Import ========
 const Todo = require('./models/todo');
@@ -28,7 +34,7 @@ const User = require('./models/user');
 // ======== Mongoose Connect ========
 const localDB = 'mongodb://localhost/todo_app'
 const dbRoute = "mongodb+srv://Admin_User:998cars998@cluster0.3eyge.gcp.mongodb.net/todo_app?retryWrites=true&w=majority";
-mongoose.connect(dbRoute, {
+mongoose.connect(localDB, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
@@ -57,6 +63,9 @@ app.use(todoRoutes);
 
 const userRoutes = require('./routes/user');
 app.use(userRoutes);
+
+
+
 
 // ======== Connect to server ========
 app.listen(port, function () {

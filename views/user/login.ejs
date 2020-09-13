@@ -1,10 +1,10 @@
 <%- include('../partials/header') %>
-
-<div class="flex-item">
+<section class="user-form">
+  <h1>Login</h1>
   <form action="/login " method="POST">
-    <input type="text" name="username" id="" placeholder="Username">
-    <input type="password" name="password" id="" placeholder="Password">
+    <input type="text" name="username" id="" placeholder="Username" autofocus>
+    <input type="password" name="password" id="" placeholder="Password" required>
     <input type="submit" value="Login">
   </form>
-</div>
+</section>
 <%- include('../partials/footer') %>

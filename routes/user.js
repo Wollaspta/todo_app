@@ -1,5 +1,5 @@
 const express = require('express');
-const router = express.Router();
+const router = express.Router({ mergeParams: true });
 const passport = require('passport');
 const User = require('../models/user');
 const Todo = require('../models/todo');
@@ -33,6 +33,10 @@ router.get('/register', function (req, res) {
   res.render('user/register')
 });
 
+router.get("/logout", function (req, res) {
+  req.logOut();
+  res.redirect("/login");
+});
 
 
 module.exports = router;

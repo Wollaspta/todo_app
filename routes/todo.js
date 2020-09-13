@@ -1,5 +1,5 @@
 const express = require('express');
-const router = express.Router();
+const router = express.Router({ mergeParams: true });
 const passport = require('passport');
 const User = require('../models/user');
 const Todo = require('../models/todo');
@@ -7,17 +7,17 @@ const Todo = require('../models/todo');
 // ======== Routes ========
 
 router.get('/', function (req, res) {
-  res.redirect('/todo')
+  res.redirect('/todo');
 })
 
 // ======== Show all todos and create todos ========
 router.get("/todo", isLoggedIn, function (req, res) {
-  req.user;
+  // req.user;
   User.findById(req.user).populate('todos').exec(function (err, foundUser) {
     if (err) {
       console.log(err);
     } else {
-      res.render('todo/todo', { user: foundUser });
+      res.render('todo/todo', { user: foundUser, currentUser: req.user });
     }
   });
 });
@@ -74,7 +74,7 @@ function isLoggedIn(req, res, next) {
   if (req.isAuthenticated()) {
     return next()
   }
-  res.redirect("/register")
+  res.redirect("/login")
 }
 
 module.exports = router;
