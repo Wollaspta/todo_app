@@ -28,6 +28,7 @@ router.post("/todo/new", isLoggedIn, function (req, res) {
   User.findById(userId, function (err, user) {
     if (err) {
       console.log(err)
+      res.redirect('/todo')
     } else {
       Todo.create(req.body.todo, function (err, todo) {
         if (err) {
@@ -43,32 +44,37 @@ router.post("/todo/new", isLoggedIn, function (req, res) {
   });
 });
 
-// // ======== Delete todo =======
-router.delete("/todo/delete/all", isLoggedIn, function (req, res) {
-  Todo.deleteMany({}, function (err) {
-    if (err) {
-      console.log(err);
-    }
-    console.log("DB Cleared");
-    res.redirect("/todo");
-  });
-});
+// // // ======== Delete all todos =======
+// router.delete("/todo/delete/all", isLoggedIn, function (req, res) {
+//   Todo.deleteMany({}, function (err, dAllTodo) {
+//     console.log(dAllTodo)
+//     if (err) {
+//       console.log(err)
 
+
+// ======== Delete one todo ========
 router.delete("/todo/delete/:id", isLoggedIn, function (req, res) {
   Todo.findByIdAndRemove(req.params.id, req.body.todo, function (err, dTodo) {
     if (err) {
       console.log(err)
-    } else {
       res.redirect('/todo')
+    } else {
+      User.findByIdAndUpdate(req.user.id, { $pull: { todos: dTodo.id } }, function (err) {
+        if (err) {
+          console.log(err)
+        } else {
+          res.redirect('/todo');
+        }
+      });
     }
-  })
+  });
 });
 
 function isLoggedIn(req, res, next) {
   if (req.isAuthenticated()) {
     return next()
   }
-  res.redirect("/login")
+  res.redirect("/register")
 }
 
 module.exports = router;

@@ -20,6 +20,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname + "/public"));
 app.use(methodOverride('_method'));
 
+
 // ======== Models Import ========
 const Todo = require('./models/todo');
 const User = require('./models/user');
@@ -33,6 +34,9 @@ mongoose.connect(dbRoute, {
 })
   .then(() => console.log('Connected to DB!'))
   .catch(error => console.log(error.message));
+
+
+mongoose.set('useFindAndModify', false);
 
 // ======== Passport config ========
 app.use(require('express-session')({
