@@ -15,8 +15,8 @@ body {
   display: inline-flex;
   justify-content: center;
   /* border: 2px solid black; */
-  margin: 0 5%;
-  width: 90%;
+  margin: 0 10%;
+  width: 80%;
   background-color:#87B0B0;
   box-shadow: 5px 5px 10px #3B3C3B;
 }
