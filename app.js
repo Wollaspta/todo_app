@@ -30,11 +30,24 @@ app.use(function (req, res, next) {
 // ======== Models Import ========
 const Todo = require('./models/todo');
 const User = require('./models/user');
-
-// ======== Mongoose Connect ========
 const localDB = 'mongodb://localhost/todo_app'
-const dbRoute = "mongodb+srv://Admin_User:998cars998@cluster0.3eyge.gcp.mongodb.net/todo_app?retryWrites=true&w=majority";
-mongoose.connect(dbRoute, {
+// ======== Mongoose Connect ========
+function setDb(url) {
+  if (process.env.USERDOMAIN === 'ALTUSLAPTOP') {
+    console.log("Correct ENV")
+    const localDB = 'mongodb://localhost/todo_app'
+    const url = process.env.DATABASEURL || localDB;
+    return url;
+  } else {
+    console.log('hosted ENV');
+    console.log(process.env.DATABASEURL);
+    return url = process.env.DATABASEURL;
+  }
+}
+
+
+// const dbRoute = "mongodb+srv://Admin_User:998cars998@cluster0.3eyge.gcp.mongodb.net/todo_app?retryWrites=true&w=majority";
+mongoose.connect(setDb(), {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
