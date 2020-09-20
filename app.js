@@ -40,7 +40,7 @@ function setDb(url) {
     return url;
   } else {
     console.log('hosted ENV');
-    console.log(process.env.DATABASEURL);
+    // for testing onyl console.log(process.env.DATABASEURL);
     return url = process.env.DATABASEURL;
   }
 }
