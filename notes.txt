@@ -19,7 +19,7 @@
       <button type="submit" name="todo[done]">Done</button>
     </form>
 
-  </ul>
+  </ul> 
   <%}) %>
   <!-- Delete all todos from list -->
   <form action="/todo/delete/all?_method=DELETE" method="POST">
