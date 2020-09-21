@@ -19,6 +19,7 @@ body {
   outline: none;
   border: none;
 }
+
 .btn-primary:hover {
   background-color: #F8FAF9;
   outline: none;
@@ -27,7 +28,6 @@ body {
 }
 
 .form-control:focus{
-  
   border-color: #F8FAF9;
   outline-color: #F8FAF9;
   box-shadow: 0 0 0 0.2rem rgba(255, 255 , 100, .25);
@@ -37,6 +37,7 @@ h1{
   color: rgba(30,30,30,.5);
   font-weight: 400;
 }
+
 #username-top{
   color: rgba(150,150,150,.9);
   font-weight: 700;
