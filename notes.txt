@@ -12,7 +12,7 @@
 
     <form action=" /todo/delete/<%=todo.id%>?_method=DELETE" method="POST">
       <li class="<%= todo.done %>"><%= todo.text %></li>
-      <button type="submit">Delete</button>
+      <button type="submit">Delete</button> 
     </form>
     <!-- Toggle done -->
     <form action="/todo/update/<%= todo._id %>?_method=PUT" method="POST">
