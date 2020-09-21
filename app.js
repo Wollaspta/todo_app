@@ -34,8 +34,8 @@ const localDB = 'mongodb://localhost/todo_app'
 // ======== Mongoose Connect ========
 function setDb(url) {
   if (process.env.USERDOMAIN === 'ALTUSLAPTOP') {
-    console.log("Correct ENV")
-    const localDB = 'mongodb://localhost/todo_app'
+    console.log("Local ENV")
+    const localDB = 'mongodb://localhost/todo_app_test'
     const url = process.env.DATABASEURL || localDB;
     return url;
   } else {
@@ -46,7 +46,7 @@ function setDb(url) {
 }
 
 
-// const dbRoute = "mongodb+srv://Admin_User:998cars998@cluster0.3eyge.gcp.mongodb.net/todo_app?retryWrites=true&w=majority";
+
 mongoose.connect(setDb(), {
   useNewUrlParser: true,
   useUnifiedTopology: true

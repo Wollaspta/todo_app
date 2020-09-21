@@ -7,14 +7,43 @@
   <link rel="shortcut icon" type="image/x-icon" href="../images/favicon-16x16.png">
   <title>Todo today!</title>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css?family=Catamaran|Lato:400i" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="../stylesheets/app.css">
 
 </head>
 
 <body>
-  <nav>
+  <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="/todo"><i class="fas fa-list-ol logo"></i></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <% if(!currentUser){ %>
+          <li><a href="/login" class="nav-link text-center">Login</a></li>
+          <li><a href="/register" class="nav-link text-center">Sign Up</a></li>
+          <%}else{%>
+          <li>
+            <!-- <h2>Signed in as <span><%= currentUser.username %></span></h2> -->
+          </li>
+          <li><a href="/logout" class="nav-link">Log Out</a></li>
+          <% } %>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+
+
+
+
+
+
+  <!-- <nav>
     <div class="nav-container">
       <ul>
 
@@ -24,12 +53,12 @@
           <li><a href="/login">Login</a></li>
           <li><a href="/register">Sign Up</a></li>
           <%}else{%>
-          <!-- <li>
+          <li>
             <h2>Signed in as <span><%= currentUser.username %></span></h2>
-          </li> -->
+          </li>
           <li><a href="/logout">Log Out</a></li>
           <% } %>
         </div>
       </ul>
     </div>
-  </nav>
+  </nav> -->
