@@ -1,0 +1,51 @@
+<%- include('../partials/header') %>
+
+<div class="container">
+  <h1 class="todo-welcome"><span id="username-top"><%= user.username %></span> What do you want to do today?</h1>
+
+
+  <form action="/todo/new" method="POST" class="mb-2">
+    <div class="form-group">
+      <!-- <label for="exampleInputEmail1">Email address</label> -->
+      <input type="text" name="todo[text]" placeholder="Todo" required spellcheck="false" class="d-inline-flex form-control" autofocus>
+
+    </div>
+    <button type="submit" class="btn btn-sm btn-primary d-inline-flex" id="new-todo-btn">Add new Todo</button>
+  </form>
+
+  <div class="d-flex justify-content-start flex-column" id="user-todos">
+    <% user.todos.forEach(function(todo){%>
+    <form action="/todo/delete/<%=todo.id%>?_method=DELETE" method="post">
+      <div class="form-group">
+
+        <button type="submit" class="btn btn-primary d-inline-flex"><i class="far fa-trash-alt"></i></button>
+        <p class="d-inline-flex lead"><%= todo.text %></p>
+
+      </div>
+
+    </form>
+    <%}) %>
+  </div>
+
+
+
+
+
+  <!-- <ul>
+    <li><button type="submit"></button>
+
+    </li>
+  </ul>
+  </form> -->
+
+
+  <!-- </div> -->
+
+  <!-- <div class="flex-item"> -->
+  <!-- Delete all todos from list -->
+  <!-- <form action="/todo/delete/all?_method=DELETE" method="POST">
+    <button type="submit">DELETE ALL!!!!</button>
+  </form>
+</div> -->
+</div>
+<%- include('../partials/footer') %>

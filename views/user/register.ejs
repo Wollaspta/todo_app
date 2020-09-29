@@ -1,0 +1,29 @@
+<%- include('../partials/header') %>
+<div class="container">
+  <h2>Register</h2>
+  <form action="/register" method="POST">
+    <div class="form-row align-items-center">
+      <div class="col-auto">
+
+        <input type="text" class="form-control mb-2" id="inlineFormInput" placeholder="Username" name="username" required autofocus>
+      </div>
+      <div class="col-auto">
+        <label class="sr-only" for="inlineFormInputGroup">Username</label>
+        <div class="input-group mb-2">
+
+          <input type="password" class="form-control" id="inlineFormInputGroup" placeholder="Password" name="password" required>
+        </div>
+      </div>
+
+      <div class="col-auto">
+        <button type="submit" class="btn btn-primary user-btn mb-2">Register</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+
+
+
+
+<%- include('../partials/footer') %>
